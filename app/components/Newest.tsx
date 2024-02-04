@@ -4,6 +4,8 @@ import { client } from "../lib/sanity";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+export const revalidate = 30; // revalidate at most every sec
+
 async function getData() {
   const query = `*[_type =="product"][0...4] | order(_createdAt desc) {
         _id,
