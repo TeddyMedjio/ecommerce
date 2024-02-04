@@ -3,6 +3,8 @@ import { client } from "../lib/sanity";
 import Link from "next/link";
 import { simplifiedProduct } from "../interface";
 
+export const revalidate = 30; // revalidate at most every sec
+
 async function getData(category: string) {
   const query = `*[_type =="product" && category->name=="${category}"]{
         _id,
